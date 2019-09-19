@@ -1,2 +1,2 @@
 # dorayaki
-Forum clone
+Hacker News clone
