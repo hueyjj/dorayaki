@@ -16,14 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 
-from rest_framework import routers
+from dorayaki.routers import router
 
-API_VERSION = '^(?P<version>(v1|v2))'
+API_VERSION = '^(?P<version>(api/)(v1|v2))'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(f'{API_VERSION}/', include('dorayaki.thread.urls')),
-    re_path(f'{API_VERSION}/', include('dorayaki.user.urls')),
-    # re_path(f'{API_VERSION}/auth/', include('rest_auth.urls')),
-    # re_path(f'{API_VERSION}/auth/registration/', include('rest_auth.registration.urls')),
+    re_path(f'{API_VERSION}/', include(router.urls)),
 ]
