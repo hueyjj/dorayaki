@@ -7,4 +7,4 @@ from dorayaki.comment.views import CommentViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'threads', ThreadViewSet)
-router.register(r'comments', CommentViewSet)
+router.register(r'comments', CommentViewSet, basename="comments")
