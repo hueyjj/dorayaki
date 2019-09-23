@@ -2,7 +2,7 @@ from rest_framework.routers import DefaultRouter
 
 from dorayaki.user.views import UserViewSet
 from dorayaki.thread.views import ThreadViewSet
-from dorayaki.thread.comment.views import CommentViewSet
+from dorayaki.comment.views import CommentViewSet
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)

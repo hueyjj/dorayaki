@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'dorayaki.user',
     'dorayaki.thread',
-    'dorayaki.thread.comment',
+    'dorayaki.comment',
 ]
 
 MIDDLEWARE = [
