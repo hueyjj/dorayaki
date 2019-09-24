@@ -22,5 +22,6 @@ API_VERSION = '^(?P<version>(api/)(v1|v2))'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth/', include('rest_framework.urls')),
     re_path(f'{API_VERSION}/', include(router.urls)),
 ]
