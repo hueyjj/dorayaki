@@ -2,6 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { 
+  fetchThreads, 
+  login, 
+  getCsrfToken,
+} from "./util";
+
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -19,6 +25,10 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
+
+      <button onClick={() => fetchThreads()}>Fetch threads</button>
+      <button onClick={() => login()}>login</button>
+      <button onClick={() => getCsrfToken()}>get csrf token</button>
     </div>
   );
 }

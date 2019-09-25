@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 
+import dorayaki.authentication.views as auth_views
 from dorayaki.routers import router
 
 API_VERSION = '^(?P<version>(api/)(v1|v2))'
@@ -23,5 +24,6 @@ API_VERSION = '^(?P<version>(api/)(v1|v2))'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
+    path('poop/', auth_views.login),
     re_path(f'{API_VERSION}/', include(router.urls)),
 ]
