@@ -5,4 +5,4 @@ from dorayaki.thread.models import Thread
 class ThreadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Thread
-        fields = ['pk', 'owner', 'title', 'link', 'created']
+        fields = ['pk', 'title', 'link', 'created']

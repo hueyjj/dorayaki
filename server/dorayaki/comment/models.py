@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
-from dorayaki.user.models import User
 from dorayaki.thread.models import Thread
 
 class Comment(models.Model):
