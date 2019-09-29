@@ -1,8 +1,9 @@
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from dorayaki.permissions import IsAuthenticatedAndOwner
+from dorayaki.permissions import IsOwner
 from dorayaki.comment.models import Comment
 from dorayaki.comment.serializers import CommentSerializer
 
@@ -10,7 +11,10 @@ class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
-    permission_classes = [IsAuthenticatedAndOwner]
+    permission_classes = [
+        IsAuthenticatedOrReadOnly,
+        IsOwner,
+    ]
 
     def list(self, request, *args, **kwargs):
         thread = self.request.query_params.get('thread', None)
