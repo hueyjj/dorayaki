@@ -21,14 +21,14 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from dorayaki.routers import router
+from dorayaki.routers import router, urlpatterns2
 
 API_VERSION = '^(?P<version>(api/)(v1|v2))'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('auth/', include('rest_framework.urls')),
-    re_path(f'{API_VERSION}/token/', TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    re_path(f'{API_VERSION}/refresh/', TokenRefreshView.as_view(), name="token_refresh"),
-    re_path(f'{API_VERSION}/', include(router.urls)),
+    re_path(f'{API_VERSION}/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    re_path(f'{API_VERSION}/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # re_path(f'{API_VERSION}/', include(router.urls), name='root'),
+    re_path(f'{API_VERSION}/', include(urlpatterns2), name='root'),
 ]
