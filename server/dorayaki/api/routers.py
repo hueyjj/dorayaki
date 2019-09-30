@@ -16,9 +16,9 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-dorayaki_urls = [
+api_urls = [
     re_path(r'^register/$', RegisterUserAPIView.as_view(), name="register"),
     re_path(r'^token/$', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     re_path(r'^refresh/$', TokenRefreshView.as_view(), name='token_refresh'),
 ]
-dorayaki_urls += router.urls
+api_urls += router.urls

@@ -3,7 +3,7 @@ from django_hosts import patterns, host
 
 host_patterns = patterns('',
     host(r'www', settings.ROOT_URLCONF, name='www'),
-    host(r'(\w+)', 'dorayaki.urls', name='api'),
+    host(r'(\w+)', 'dorayaki.api.urls', name='api'),
     # host(r'api', 'dorayaki.urls', name='api'),
     # host(r'beta', 'beta.urls', name='beta'),
 )

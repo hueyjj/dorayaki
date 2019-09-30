@@ -16,11 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 
-from dorayaki.routers import dorayaki_urls
-
-API_VERSION = '^(?P<version>(api/)(v1|v2))'
+from dorayaki.web.home_view import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(f'{API_VERSION}/', include(dorayaki_urls), name='root'),
+    path('', HomeView.as_view(), name="home"),
 ]
