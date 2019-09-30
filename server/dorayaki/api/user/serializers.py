@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from dorayaki.user.models import User
+from dorayaki.api.user.models import User
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

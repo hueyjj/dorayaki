@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from dorayaki.comment.models import Comment
+from dorayaki.api.comment.models import Comment
 
 admin.site.register(Comment)

@@ -25,7 +25,11 @@ SECRET_KEY = 'bnm+g5z(e^rcmniqxpjx)l3n09p%j1gg3=pm5g*(o!wx_0x2bp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    'localhost',
+    'api.localhost',
+]
 
 
 # Application definition
@@ -37,15 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_hosts',
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    'dorayaki.user',
-    'dorayaki.thread',
-    'dorayaki.comment',
+    'dorayaki.api.user',
+    'dorayaki.api.thread',
+    'dorayaki.api.comment',
 ]
 
 MIDDLEWARE = [
+    'django_hosts.middleware.HostsRequestMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,9 +60,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
 ROOT_URLCONF = 'dorayaki.urls'
+ROOT_HOSTCONF = 'dorayaki.hosts'
+DEFAULT_HOST = 'www'
 
 TEMPLATES = [
     {

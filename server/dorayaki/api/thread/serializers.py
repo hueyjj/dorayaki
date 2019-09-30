@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from dorayaki.thread.models import Thread
+from dorayaki.api.thread.models import Thread
 
 class ThreadSerializer(serializers.ModelSerializer):
     class Meta:

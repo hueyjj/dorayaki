@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from dorayaki.comment.models import Comment
+from dorayaki.api.comment.models import Comment
 
 # Modified version from https://stackoverflow.com/questions/13376894/django-rest-framework-nested-self-referential-objects#answer-27236783
 class RecursiveCommentSerializer(serializers.Serializer):

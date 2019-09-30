@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-from dorayaki.user.models import User
+from dorayaki.api.user.models import User
 
 class Thread(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)

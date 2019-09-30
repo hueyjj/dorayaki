@@ -1,9 +1,19 @@
-from rest_framework import viewsets, generics, status
+from rest_framework import (
+    viewsets, 
+    generics, 
+    status,
+)
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import (
+    AllowAny, 
+    IsAuthenticatedOrReadOnly,
+)
 
-from dorayaki.user.models import User
-from dorayaki.user.serializers import UserSerializer, RegisterUserSerializer
+from dorayaki.api.user.models import User
+from dorayaki.api.user.serializers import (
+    UserSerializer, 
+    RegisterUserSerializer,
+)
 from dorayaki.permissions import IsOwner
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -26,3 +36,9 @@ class RegisterUserAPIView(generics.CreateAPIView):
             self.perform_create(serializer)
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class LogoutAPIView(generics.RetrieveUpdateAPIView):
+    permission_classes = [
+        IsAuthenticatedOrReadOnly,
+        IsOwner,
+    ]

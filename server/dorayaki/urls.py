@@ -16,19 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
-
-from dorayaki.routers import router, urlpatterns2
+from dorayaki.routers import dorayaki_urls
 
 API_VERSION = '^(?P<version>(api/)(v1|v2))'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(f'{API_VERSION}/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    re_path(f'{API_VERSION}/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    # re_path(f'{API_VERSION}/', include(router.urls), name='root'),
-    re_path(f'{API_VERSION}/', include(urlpatterns2), name='root'),
+    re_path(f'{API_VERSION}/', include(dorayaki_urls), name='root'),
 ]

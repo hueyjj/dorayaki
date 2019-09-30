@@ -2,8 +2,8 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from dorayaki.permissions import IsOwner
-from dorayaki.thread.models import Thread
-from dorayaki.thread.serializers import ThreadSerializer
+from dorayaki.api.thread.models import Thread
+from dorayaki.api.thread.serializers import ThreadSerializer
 
 class ThreadViewSet(viewsets.ModelViewSet):
     queryset = Thread.objects.all()
