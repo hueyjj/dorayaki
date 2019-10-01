@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    { % include 'react/register/css.html' %}
+    {% include 'react_register/css.html' %}
   </head>
   <body>
     {% csrf_token %}
     <h1>Register</h1>
     <div id="root"></div>
   </body>
-  {% include 'react/register/js.html'}
+  {% include 'react_register/js.html' %}
 </html>
