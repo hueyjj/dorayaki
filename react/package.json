@@ -1,0 +1,8 @@
+{
+    "private": true,
+    "workspaces": [
+        "home",
+        "login",
+        "register"
+    ]
+}
