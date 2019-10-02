@@ -39,15 +39,15 @@ export const getCsrfToken = () => {
 }
 
 const loginFormData = new FormData();
-loginFormData.append("username", "foo@gmail.com")
-loginFormData.append("password", "bar")
+loginFormData.append("username", "shit")
+loginFormData.append("password", "foobar")
 
 export const login = () => {
-  fetch("http://localhost:8000/auth/login/", {
+  fetch("http://localhost:8000/api/v1/auth/login/", {
     method: "POST",
     credentials: "include",
     headers: {
-      "Accept": "*/*",
+      "Accept": "application/json",
       "X-CSRFToken": getCookie("csrftoken"),
     },
     body: loginFormData,

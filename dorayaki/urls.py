@@ -9,3 +9,6 @@ urlpatterns = [
     path('', HomeView.as_view(), name="home"),
     path('register/', RegisterView.as_view(), name="register"),
 ]
+
+from dorayaki.api.urls import urlpatterns as api_urls
+urlpatterns += api_urls
