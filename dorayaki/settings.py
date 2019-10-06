@@ -67,8 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'react', 'home', 'build'),
-            os.path.join(BASE_DIR, 'react', 'register', 'build'),
+            os.path.join(BASE_DIR, 'react', 'build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -136,7 +135,7 @@ import glob
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dorayaki', 'static'),
-] + glob.glob(os.path.join(BASE_DIR, 'react', '*', 'build', 'static'))
+] + glob.glob(os.path.join(BASE_DIR, 'react', 'build', 'static'))
 
 AUTH_USER_MODEL = 'user.User'
 
