@@ -133,9 +133,8 @@ USE_TZ = True
 import glob
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'dorayaki', 'static'),
-] + glob.glob(os.path.join(BASE_DIR, 'react', 'build', 'static'))
+STATICFILES_DIRS = glob.glob(os.path.join(BASE_DIR, 'react', 'build', 'static'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'dorayaki', 'static')
 
 AUTH_USER_MODEL = 'user.User'
 

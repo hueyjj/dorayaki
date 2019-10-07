@@ -1,8 +1,5 @@
 "use strict";
 
-const webpack = require("webpack");
-const path = require("path");
-const fs = require("fs");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TerserPlugin = require("terser-webpack-plugin");
@@ -88,9 +85,22 @@ const config = {
 					{
 						test: /\.scss$/,
 						use: [
-							MiniCssExtractPlugin.loader,
-							"css-loader",
-							"sass-loader"
+							{
+								loader: MiniCssExtractPlugin.loader,
+								options: {},
+							},
+							{
+								loader: "css-loader",
+								options: {
+									importLoaders: 2,
+									sourceMap: false,
+									modules: true,
+								},
+							},
+							{
+								loader: "sass-loader",
+								options: {},
+							}
 						]
 					},
 					{
