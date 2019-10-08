@@ -1,8 +1,20 @@
+$stardust: #999999;
+
 .threadContainer {
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: 25px auto 1fr;
+  grid-gap: 5px;
+  margin: 5px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.upvote {
+  color: $stardust;
 }
 
 .rank {
-
+  text-align: right;
 }

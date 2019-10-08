@@ -60,6 +60,82 @@ class HomePage extends React.Component {
           commentsLink="example.com"
           threadLink="example.com"
         />
+        <Thread
+          rank={22}
+          title="My title"
+          points={10}
+          user="hueyjj"
+          datePosted="13 hours ago"
+          comments={511}
+          commentsLink="example.com"
+          threadLink="example.com"
+        />
+        <Thread
+          rank={222}
+          title="My title"
+          points={10}
+          user="hueyjj"
+          datePosted="13 hours ago"
+          comments={511}
+          commentsLink="example.com"
+          threadLink="example.com"
+        />
+        <hr className={styles.line} />
+        <div className={styles.footer}>
+          <ul>
+            <li>
+              <a href="/">Guidelines</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">FAQ</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Support</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">API</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Security</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Lists</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Bookmarklet</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Legal</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Apply to YC</a>
+              <span> | </span>
+            </li>
+            <li>
+              <a href="/">Contact</a>
+            </li>
+          </ul>
+          <form
+            method="GET"
+            action="/"
+          >
+            <div className={styles.search}>
+              <label htmlFor="search">Search: </label>
+              <input
+                type="text"
+                id="search"
+              />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
