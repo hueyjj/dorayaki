@@ -61,9 +61,22 @@ const config = {
           {
             test: /\.scss$/,
             use: [
-              MiniCssExtractPlugin.loader,
-              "css-loader",
-              "sass-loader"
+              {
+                loader: MiniCssExtractPlugin.loader,
+                options: {},
+              },
+              {
+                loader: "css-loader",
+                options: {
+                  importLoaders: 2,
+                  sourceMap: false,
+                  modules: true,
+                },
+              },
+              {
+                loader: "sass-loader",
+                options: {},
+              }
             ]
           },
           {
@@ -99,7 +112,6 @@ const config = {
         chunks: [entryName],
         filename: `${entryName}.html`,
         template: `./templates/${entryName}.html`,
-        favicon: "./public/favicon.ico",
         minify: {
           removeComments: true,
           collapseWhitespace: true,
