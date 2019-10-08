@@ -10,9 +10,15 @@ class HomePage extends React.Component {
     return (
       <div className={styles.centerContainer}>
         <div className={styles.header}>
-          <a href="/"><img src={logo}></img></a>
-          <span>Hacker News</span>
+          <a className={styles.logoLink} href="/">
+            <img src={logo} />
+          </a>
           <ul className={styles.links}>
+            <li>
+              <b>
+                <span className={styles.title}>Hacker News</span>
+              </b>
+            </li>
             <li>
               <a href="/newest">new</a>
               <span> | </span>
@@ -42,6 +48,15 @@ class HomePage extends React.Component {
             </li>
           </ul>
           <a className={styles.login} href="/login">login</a>
+        </div>
+        <div>
+          something
+        </div>
+        <div>
+          something
+        </div>
+        <div>
+          something
         </div>
       </div>
     );
