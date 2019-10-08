@@ -49,6 +49,14 @@ const config = {
       {
         oneOf: [
           {
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            loader: "url-loader",
+            options: {
+              limit: 10000,
+              name: 'static/media/[name].[hash:8].[ext]',
+            },
+          },
+          {
             test: /\.(js|jsx)$/,
             use: "babel-loader",
             exclude: /node_modules/
@@ -76,17 +84,6 @@ const config = {
               {
                 loader: "sass-loader",
                 options: {},
-              }
-            ]
-          },
-          {
-            test: /\.png$/,
-            use: [
-              {
-                loader: "url-loader",
-                options: {
-                  mimetype: "image/png"
-                }
               }
             ]
           },
