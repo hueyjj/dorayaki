@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 
-import styles from "./home.module.scss";
+import Thread from "components/thread";
 
+import styles from "./home.module.scss";
 import logo from "assets/darky18.gif";
 
 class HomePage extends React.Component {
@@ -49,15 +50,16 @@ class HomePage extends React.Component {
           </ul>
           <a className={styles.login} href="/login">login</a>
         </div>
-        <div>
-          something
-        </div>
-        <div>
-          something
-        </div>
-        <div>
-          something
-        </div>
+        <Thread
+          rank={5}
+          title="My title"
+          points={10}
+          user="hueyjj"
+          datePosted="13 hours ago"
+          comments={511}
+          commentsLink="example.com"
+          threadLink="example.com"
+        />
       </div>
     );
   }
