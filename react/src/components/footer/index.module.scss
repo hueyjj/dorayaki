@@ -1,0 +1,25 @@
+$blaze-orange: #ff6600;
+
+.line {
+  border: 1px solid $blaze-orange;
+}
+
+.footer {
+  margin-bottom: 15px;
+  ul {
+    padding: 0;
+    text-align: center;
+    li {
+      display: inline;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 8pt;
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+  .search {
+    text-align: center;
+  }
+}

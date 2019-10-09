@@ -1,6 +1,6 @@
 $primary-color: black;
-$spring-wood: #f6f6ef;
 $blaze-orange: #ff6600;
+$spring-wood: #f6f6ef;
 $bg: white;
 
 body {
@@ -12,75 +12,4 @@ body {
 .centerContainer {
   overflow: auto;
   background-color: $spring-wood;
-}
-
-.header {
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 5px;
-  padding-left: 2px;
-  line-height: 12px;
-  background-color: $blaze-orange;
-
-  .logoLink {
-    img {
-      display: block;
-      border: 1px white solid;
-    }
-  }
-
-  .title {
-    margin-left: 5px;
-    margin-right: 5px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 10pt;
-    line-height: 16px;
-  }
-
-  .links {
-    margin: 0;
-    padding: 0;
-    align-self: center;
-    justify-self: center;
-    li {
-      display: inline;
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-  }
-  .login {
-    align-self: center;
-    justify-self: end;
-    color: black;
-    text-decoration: none;
-  }
-}
-
-.line {
-  border: 1px solid $blaze-orange;
-}
-
-.footer {
-  margin-bottom: 15px;
-  ul {
-    padding: 0;
-    text-align: center;
-    li {
-      display: inline;
-      font-family: Verdana, Geneva, sans-serif;
-      font-size: 8pt;
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.search {
-  text-align: center;
 }
